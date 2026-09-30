@@ -1,0 +1,28 @@
+# Python
+__pychache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Test reports
+test-results/
+reports/
+
+# Playwright
+playwright-report/
+blob-report/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
