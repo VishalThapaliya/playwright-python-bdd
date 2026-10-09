@@ -8,4 +8,3 @@ def test_login_saucedemo(login_page):
     expect(login_page.password_input).to_be_visible()
     expect(login_page.login_button).to_be_visible()
     
-    # login_page.login("standard_user", "secret_sauce")
