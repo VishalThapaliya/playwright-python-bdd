@@ -1,4 +1,4 @@
-from pytest_bdd import given, when, then
+from pytest_bdd import given, when, then, parsers
 from playwright.sync_api import expect
 
 # Given section
@@ -8,9 +8,9 @@ def open_login_page(login_page):
 
 
 #  When section
-@when('I log in with username "standard_user" and password "secret_sauce"')
-def login_with_valid_credentials(login_page):
-    login_page.login("standard_user", "secret_sauce")
+@when(parsers.parse('I log in with username "{username}" and password "{password}"'))
+def login_with_valid_credentials(login_page, username, password):
+    login_page.login(username, password)
 
 
 #  Then section
@@ -31,5 +31,5 @@ def verify_login_button(login_page):
     expect(login_page.login_button).to_be_visible()
 
 @then("I should be on the poducts page")
-def verify_products_page(login_page):
-    expect(login_page.page).to_have_url("https://www.saucedemo.com/inventory.html")
+def verify_products_page(products_page):
+    expect(products_page.page).to_have_url("https://www.saucedemo.com/inventory.html")
