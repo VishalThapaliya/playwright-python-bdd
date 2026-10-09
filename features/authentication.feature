@@ -9,5 +9,5 @@ Feature: SauceDemo login page
 
     Scenario: Valid user can log in
         Given I open the SauceDemo login page
-        When I log in with username "standard_user" and password "secret_sauce"
+        When I log in with username "<username>" and password "<password>"
         Then I should be on the poducts page
